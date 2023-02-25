@@ -27,6 +27,24 @@ export class Kind extends BaseKind<Params> {
 
       return ActionFlags.None;
     },
+
+    view_web: async (args: ActionArguments<Params>): Promise<ActionFlags> => {
+      const getCwdResult = await args.denops.call("getcwd")
+      const cwd = getCwdResult as string
+
+      for (const item of args.items) {
+        const action = item?.action as ActionData;
+
+        const cmd = new Deno.Command("gh", { args: ["pr", "view", "--web", action.pr_number.toString()], cwd: cwd });
+        const result = cmd.outputSync();
+
+        if (!result.success) {
+          console.log(decoder.decode(result.stderr));
+        }
+      }
+
+      return ActionFlags.None;
+    },
   }
 
   params(): Params {
