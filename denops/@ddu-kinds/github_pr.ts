@@ -6,11 +6,11 @@ export type ActionData = {
 
 type Params = Record<never, never>;
 
+const decoder = new TextDecoder();
+
 export class Kind extends BaseKind<Params> {
   actions: Record<string, (args: ActionArguments<Params>) => Promise<ActionFlags>> = {
     switch: async (args: ActionArguments<Params>): Promise<ActionFlags> => {
-      const decoder = new TextDecoder();
-
       const getCwdResult = await args.denops.call("getcwd")
       const cwd = getCwdResult as string
 
