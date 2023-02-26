@@ -48,7 +48,7 @@ export class Source extends BaseSource<Params> {
           return {
             word: prItem.id,
             display: line,
-            action: { pr_number: prItem.number },
+            action: { pr_number: prItem.number, title: prItem.title },
             highlights: [
               { name: "pr_number", hl_group: "Comment", col: 1, width: byteLength(`#${prItem.number}`)},
               { name: "head_ref_name", hl_group: "Identifier", col: charposToBytepos(line, line.lastIndexOf("\t") + 1) + 1, width: byteLength(prItem.headRefName)},
