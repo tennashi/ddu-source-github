@@ -28,7 +28,7 @@ export class Kind extends BaseKind<Params> {
       return ActionFlags.None;
     },
 
-    view_web: async (args: ActionArguments<Params>): Promise<ActionFlags> => {
+    viewWeb: async (args: ActionArguments<Params>): Promise<ActionFlags> => {
       const getCwdResult = await args.denops.call("getcwd")
       const cwd = getCwdResult as string
 

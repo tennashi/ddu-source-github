@@ -8,7 +8,7 @@ type Params = Record<never, never>;
 
 export class Kind extends BaseKind<Params> {
   actions: Record<string, (args: ActionArguments<Params>) => Promise<ActionFlags>> = {
-    view_web: async (args: ActionArguments<Params>): Promise<ActionFlags> => {
+    viewWeb: async (args: ActionArguments<Params>): Promise<ActionFlags> => {
       const decoder = new TextDecoder();
 
       const getCwdResult = await args.denops.call("getcwd")

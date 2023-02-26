@@ -59,13 +59,13 @@ GITHUBPR                                          *ddu-kind-github_pr-actions*
 switch                                     *ddu-kind-github_pr-actions-switch*
 		Run `gh pr checkout <pr_number>`
 
-view_web                                 *ddu-kind-github_pr-actions-view_web*
+viewWeb                                   *ddu-kind-github_pr-actions-viewWeb*
 		Run `gh pr view --web <pr_number>`
 
 ------------------------------------------------------------------------------
 GITHUBISSUE                                    *ddu-kind-github_issue-actions*
 
-view_web                              *ddu-kind-github_issue-actions-view_web*
+viewWeb                                *ddu-kind-github_issue-actions-viewWeb*
 		Run `gh issue view --web <pr_number>`
 
 ==============================================================================
